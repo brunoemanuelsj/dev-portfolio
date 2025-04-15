@@ -1,7 +1,7 @@
 <template>
   <nav class="app_nav">
     <div class="mobile_nav">
-      <div class="title">Current Title</div>
+      <div class="title">{{ route.meta.title }}</div>
       <BurgerIcon class="button_toggle" @click="toggleMenu" :isOpen="isOpen" />
     </div>
 
@@ -32,6 +32,9 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 import BurgerIcon from './BurgerIcon.vue';
+
+import { useRoute } from 'vue-router';
+const route = useRoute();
 
 const isOpen = ref(false);
 

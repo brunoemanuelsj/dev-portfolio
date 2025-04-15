@@ -3,10 +3,10 @@
 :root {
   --blue-nav: #061a40;
   --blue-gray: #90adc6;
-  --pewter: #e9eaec;
   --yellow: #fad02c;
-  --dark-blue: #333652;
   --russian-violet: #34113f;
+  --pewter: #e9eaec;
+  --dark-blue: #333652;
 
   --nav-mobile: 60px;
   --nav-desktop: 230px;
@@ -15,7 +15,8 @@
 /* src/assets/fonts/fonts.css */
 @font-face {
   font-family: 'Roboto';
-  src: url('./fonts/Roboto-VariableFont.ttf') format('truetype');
+  src: url('./fonts/Roboto-VariableFont.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-stretch: 75% 125%;
   font-style: normal;

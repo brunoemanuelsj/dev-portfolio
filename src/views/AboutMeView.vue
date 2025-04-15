@@ -84,7 +84,13 @@
           <strong>Email:</strong>
           <a href="mailto:emanuelbrunosj@gmail.com">emanuelbrunosj@gmail.com</a>
         </li>
-        <li><strong>Phone:</strong> +55 (62) 99153-2200</li>
+
+        <li>
+          <strong>Phone:</strong>
+          <a href="https://api.whatsapp.com/send?phone=5562991532200&text=Ola!" target="_blank">
+            +55 (62) 99153-2200
+          </a>
+        </li>
         <li>
           <strong>LinkedIn:</strong>
           <a href="https://www.linkedin.com/in/bruno-jaime-898409135" target="_blank"
@@ -117,7 +123,7 @@ const currentAge = isBeforeBirthday ? age - 1 : age;
 <style scoped>
 .container {
   max-width: 900px;
-  margin: 0 auto;
+
   padding: 3rem 2rem;
   font-family:
     'Inter',
