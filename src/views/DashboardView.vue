@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard">
+    <CovidChart class="chart-item chart-item-full" />
     <highcharts :options="barChart" class="chart-item" />
 
     <highcharts :options="lineChart" class="chart-item" />
@@ -29,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import CovidChart from '@/components/Dashboard/CovidChart.vue';
 import { ref } from 'vue';
 
 const commonOptions = {
@@ -328,6 +330,10 @@ const combinedChart = ref({
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-item-full {
+  grid-column: 1 / -1;
 }
 
 @media (max-width: 768px) {
