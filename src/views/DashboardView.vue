@@ -1,13 +1,20 @@
 <template>
   <div class="dashboard">
     <CovidChart class="chart-item chart-item-full" />
-    <highcharts :options="barChart" class="chart-item" />
+    <WorldChart class="chart-item" />
 
-    <highcharts :options="lineChart" class="chart-item" />
+    <highcharts :options="areaChart" class="chart-item" />
+    <CandleChart class="chart-item chart-item-full" />
+    <highcharts :options="barChart" class="chart-item" />
 
     <highcharts :options="pieChart" class="chart-item" />
 
-    <highcharts :options="areaChart" class="chart-item" />
+    <highcharts :options="donutChart" class="chart-item" />
+
+    <highcharts
+      :options="combinedChart"
+      class="chart-item"
+    />
 
     <highcharts
       :options="scatterChart"
@@ -16,71 +23,36 @@
 
     <highcharts :options="columnChart" class="chart-item" />
 
-    <highcharts :options="donutChart" class="chart-item" />
-
     <highcharts :options="bubbleChart" class="chart-item" />
 
     <highcharts :options="gaugeChart" class="chart-item" />
-
-    <highcharts
-      :options="combinedChart"
-      class="chart-item"
-    />
   </div>
 </template>
 
 <script setup lang="ts">
+import CandleChart from '@/components/Dashboard/CandleChart.vue';
 import CovidChart from '@/components/Dashboard/CovidChart.vue';
+import WorldChart from '@/components/Dashboard/WorldChart.vue';
 import { ref } from 'vue';
 
-const commonOptions = {
-  credits: { enabled: false },
-  exporting: { enabled: true },
-};
-
 const barChart = ref({
-  ...commonOptions,
   chart: { type: 'bar' },
-  title: { text: 'Vendas Mensais' },
+  title: { text: 'Monthly Sales' },
   xAxis: {
-    categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   },
-  yAxis: { title: { text: 'Unidades' } },
+  yAxis: { title: { text: 'Units' } },
   series: [
     {
-      name: 'Vendas',
+      name: 'Sales',
       data: [450, 720, 620, 890, 1230, 980],
     },
   ],
 });
 
-const lineChart = ref({
-  ...commonOptions,
-  chart: { type: 'line' },
-  title: { text: 'Crescimento de Usuários' },
-  xAxis: {
-    categories: [
-      '2018',
-      '2019',
-      '2020',
-      '2021',
-      '2022',
-      '2023',
-    ],
-  },
-  yAxis: { title: { text: 'Usuários (mil)' } },
-  series: [
-    {
-      name: 'Ativos',
-      data: [1.5, 2.8, 3.2, 4.7, 6.1, 8.9],
-    },
-  ],
-});
-
 const pieChart = ref({
-  ...commonOptions,
   chart: { type: 'pie' },
-  title: { text: 'Participação de Mercado' },
+  title: { text: 'Market Share' },
   plotOptions: {
     pie: {
       allowPointSelect: true,
@@ -94,7 +66,7 @@ const pieChart = ref({
   },
   series: [
     {
-      name: 'Participação',
+      name: 'Share',
       colorByPoint: true,
       data: [
         {
@@ -114,7 +86,7 @@ const pieChart = ref({
           y: 4.67,
         },
         {
-          name: 'Outros',
+          name: 'Others',
           y: 7.05,
         },
       ],
@@ -123,33 +95,31 @@ const pieChart = ref({
 });
 
 const areaChart = ref({
-  ...commonOptions,
   chart: { type: 'area' },
-  title: { text: 'Cobertura de Área' },
+  title: { text: 'Area Coverage' },
   xAxis: {
-    categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   },
   series: [
     {
-      name: 'Região A',
+      name: 'Region A',
       data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0],
     },
     {
-      name: 'Região B',
+      name: 'Region B',
       data: [148, 176, 135, 129, 140, 158],
     },
   ],
 });
 
 const scatterChart = ref({
-  ...commonOptions,
   chart: { type: 'scatter' },
-  title: { text: 'Relação Peso x Altura' },
-  xAxis: { title: { text: 'Altura (cm)' } },
-  yAxis: { title: { text: 'Peso (kg)' } },
+  title: { text: 'Weight vs Height' },
+  xAxis: { title: { text: 'Height (cm)' } },
+  yAxis: { title: { text: 'Weight (kg)' } },
   series: [
     {
-      name: 'Amostras',
+      name: 'Samples',
       data: [
         [161.2, 51.6],
         [167.5, 59.0],
@@ -161,7 +131,6 @@ const scatterChart = ref({
 });
 
 const columnChart = ref({
-  ...commonOptions,
   chart: {
     type: 'column',
     options3d: {
@@ -171,9 +140,9 @@ const columnChart = ref({
       depth: 50,
     },
   },
-  title: { text: 'Desempenho por Departamento' },
+  title: { text: 'Department Performance' },
   xAxis: {
-    categories: ['Vendas', 'TI', 'RH', 'Financeiro'],
+    categories: ['Sales', 'IT', 'HR', 'Finance'],
   },
   plotOptions: {
     column: {
@@ -182,20 +151,19 @@ const columnChart = ref({
   },
   series: [
     {
-      name: 'Meta',
+      name: 'Target',
       data: [120, 90, 80, 110],
     },
     {
-      name: 'Realizado',
+      name: 'Actual',
       data: [105, 95, 85, 115],
     },
   ],
 });
 
 const donutChart = ref({
-  ...commonOptions,
   chart: { type: 'pie' },
-  title: { text: 'Distribuição de Orçamento' },
+  title: { text: 'Budget Distribution' },
   plotOptions: {
     pie: {
       innerSize: '50%',
@@ -204,22 +172,22 @@ const donutChart = ref({
   },
   series: [
     {
-      name: 'Orçamento',
+      name: 'Budget',
       data: [
         {
           name: 'Marketing',
           y: 45,
         },
         {
-          name: 'Pesquisa',
+          name: 'Research',
           y: 25,
         },
         {
-          name: 'Desenvolvimento',
+          name: 'Development',
           y: 20,
         },
         {
-          name: 'Outros',
+          name: 'Others',
           y: 10,
         },
       ],
@@ -228,11 +196,10 @@ const donutChart = ref({
 });
 
 const bubbleChart = ref({
-  ...commonOptions,
   chart: { type: 'bubble' },
-  title: { text: 'Relação de Investimento' },
-  xAxis: { title: { text: 'Capital Inicial' } },
-  yAxis: { title: { text: 'Retorno' } },
+  title: { text: 'Investment Relationship' },
+  xAxis: { title: { text: 'Initial Capital' } },
+  yAxis: { title: { text: 'Return' } },
   series: [
     {
       data: [
@@ -254,9 +221,8 @@ const bubbleChart = ref({
 });
 
 const gaugeChart = ref({
-  ...commonOptions,
   chart: { type: 'gauge' },
-  title: { text: 'Velocímetro' },
+  title: { text: 'Speedometer' },
   pane: {
     startAngle: -90,
     endAngle: 90,
@@ -269,39 +235,38 @@ const gaugeChart = ref({
   },
   series: [
     {
-      name: 'Velocidade',
+      name: 'Speed',
       data: [120],
     },
   ],
 });
 
 const combinedChart = ref({
-  ...commonOptions,
-  title: { text: 'Combinação de Dados' },
+  title: { text: 'Data Combination' },
   xAxis: {
-    categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
   },
   series: [
     {
       type: 'column',
-      name: 'Vendas',
+      name: 'Sales',
       data: [5, 3, 4, 7, 2],
     },
     {
       type: 'line',
-      name: 'Média',
+      name: 'Average',
       data: [3, 2.67, 3, 6.33, 3.33],
     },
     {
       type: 'pie',
-      name: 'Participação',
+      name: 'Share',
       data: [
         {
-          name: 'Janeiro',
+          name: 'January',
           y: 5,
         },
         {
-          name: 'Fevereiro',
+          name: 'February',
           y: 3,
         },
       ],
@@ -316,10 +281,7 @@ const combinedChart = ref({
 <style scoped>
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(400px, 1fr)
-  );
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
 }

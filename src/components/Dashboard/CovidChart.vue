@@ -1,11 +1,11 @@
 <template>
   <div class="covid-chart">
     <h4 class="title">
-      Evolução da COVID-19 no Brasil (últimos 90 dias)
+      COVID-19 Evolution in Brazil (last 90 days)
     </h4>
 
     <h6 class="subtitle">
-      Dados da disease.sh - Open Disease Data API
+      Data from disease.sh - Open Disease Data API
     </h6>
 
     <LoadingDefault
