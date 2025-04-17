@@ -16,4 +16,15 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 app.use(HighchartsVue, { highcharts: Highcharts });
-app.mount('#app');
+
+router.isReady().then(() => {
+  const redirectPath = new URLSearchParams(
+    window.location.search
+  ).get('redirect');
+
+  if (redirectPath) {
+    router.replace(redirectPath);
+  }
+
+  app.mount('#app');
+});

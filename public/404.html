@@ -1,10 +1,19 @@
 <!doctype html>
 <html>
   <head>
-    <meta
-      http-equiv="refresh"
-      content="0; url=/dev-portfolio/"
-    />
+    <meta charset="utf-8" />
+    <title>Redirecionando...</title>
+    <script>
+      // Remove o prefixo /dev-portfolio e redireciona
+      const redirectTo =
+        location.pathname.replace('/dev-portfolio', '') +
+        location.search +
+        location.hash;
+      location.replace(
+        '/dev-portfolio/?redirect=' +
+          encodeURIComponent(redirectTo)
+      );
+    </script>
   </head>
   <body>
     <p>Redirecionando...</p>
