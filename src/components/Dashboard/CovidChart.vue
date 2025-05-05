@@ -74,12 +74,8 @@ async function fetchCovidData() {
     const res = await axios.get(
       'https://disease.sh/v3/covid-19/historical/brazil?lastdays=90'
     );
-    console.log('res.dataaa');
 
     chartData.value = res.data.timeline;
-
-    console.log(res.data);
-    console.log(chartData.value);
 
     mountChart();
   } catch (err) {

@@ -1,23 +1,31 @@
 <template>
   <section class="about container">
-    <img :src="profilePic" alt="Bruno Emanuel" class="profile-pic" />
+    <img
+      :src="profilePic"
+      alt="Bruno Emanuel"
+      class="profile-pic"
+    />
 
     <p class="intro">
-      Hi! I'm <strong>Bruno Jaime</strong>, a {{ currentAge }}-year-old Frontend Developer from
-      Goiânia, Brazil. I specialize in building dynamic and scalable interfaces using Vue.js and
-      TypeScript.
+      Hi! I'm <strong>Bruno Jaime</strong>, a
+      {{ currentAge }}-year-old Frontend Developer from
+      Goiânia, Brazil. I specialize in building dynamic and
+      scalable interfaces using Vue.js and TypeScript.
     </p>
 
     <section class="section">
       <h2>Professional Summary</h2>
       <p>
-        I’ve been working primarily with Vue.js (Vue 2 & 3) and TypeScript to develop dashboards and
-        supply chain management tools. My focus lies in data visualization (especially using
-        Highcharts), manipulating complex datasets such as sell-in, sell-out, and inventory data.
+        I’ve been working primarily with Vue.js (Vue 2 & 3)
+        and TypeScript to develop dashboards and supply
+        chain management tools. My focus lies in data
+        visualization, manipulating complex datasets such as
+        sell-in, sell-out, and inventory data.
         <br />
-        I also bring backend knowledge (Node.js, Java, C#), database experience (PostgreSQL, SQL
-        Server), and IT infrastructure exposure, including SAP B1 integration, AWS, and network
-        support.
+        I also bring backend knowledge (Node.js, Java, C#),
+        database experience (PostgreSQL, SQL Server), and IT
+        infrastructure exposure, including SAP B1
+        integration, AWS, and network support.
       </p>
     </section>
 
@@ -25,12 +33,25 @@
       <h2>Technical Skills</h2>
       <ul>
         <li>
-          <strong>Frontend:</strong> Vue 2 & 3, TypeScript, Vuetify, Highcharts, JavaScript ES6+
+          <strong>Frontend:</strong> Vue 2 & 3, TypeScript,
+          Vuetify, Highcharts, JavaScript ES6+
         </li>
-        <li><strong>Backend:</strong> Node.js, Express, Java, C#, REST APIs</li>
-        <li><strong>Databases:</strong> PostgreSQL, SQL Server, Oracle PL/SQL</li>
-        <li><strong>Tools:</strong> Git, CI/CD, DevOps, SCRUM, Pentaho, Landix</li>
-        <li><strong>ERP & Infra:</strong> SAP B1, AWS, Windows Servers, Networks & Firewalls</li>
+        <li>
+          <strong>Backend:</strong> Node.js, Express, Java,
+          C#, REST APIs
+        </li>
+        <li>
+          <strong>Databases:</strong> PostgreSQL, SQL
+          Server, Oracle PL/SQL
+        </li>
+        <li>
+          <strong>Tools:</strong> Git, CI/CD, DevOps, SCRUM,
+          Pentaho, Landix
+        </li>
+        <li>
+          <strong>ERP & Infra:</strong> SAP B1, AWS, Windows
+          Servers, Networks & Firewalls
+        </li>
       </ul>
     </section>
 
@@ -38,35 +59,52 @@
       <h2>Experience</h2>
       <ul>
         <li>
-          <strong>Implanta IT (2021 - Present)</strong><br />
-          Frontend Developer building and maintaining Vue-based dashboards with TypeScript,
-          Highcharts, and Vuetify.
+          <strong>Implanta IT (2021 - Present)</strong
+          ><br />
+          Frontend Developer building and maintaining
+          Vue-based dashboards with TypeScript, Highcharts,
+          and Vuetify.
         </li>
         <li>
-          <strong>Major Nutrição (2020 - 2021)</strong><br />
-          Full-stack development with Java and Node.js, database routines, SAP B1 support, and
+          <strong>Major Nutrição (2020 - 2021)</strong
+          ><br />
+          Full-stack development with Java and Node.js,
+          database routines, SAP B1 support, and
           infrastructure management.
         </li>
         <li>
           <strong>Gold Sistemas (2019)</strong><br />
-          ERP support for Colosso and Antares systems, PL/SQL scripting, and client assistance via
+          ERP support for Colosso and Antares systems,
+          PL/SQL scripting, and client assistance via
           helpdesk.
         </li>
         <li>
-          <strong>Síntese Comércio Hospitalar (2018 - 2019)</strong><br />
-          IT intern handling infrastructure tasks and user support.
+          <strong
+            >Síntese Comércio Hospitalar (2018 -
+            2019)</strong
+          ><br />
+          IT intern handling infrastructure tasks and user
+          support.
         </li>
         <li>
           <strong>Agrocria (2014 - 2016)</strong><br />
-          Trainee in IT, supporting infra and internal users.
+          Trainee in IT, supporting infra and internal
+          users.
         </li>
       </ul>
     </section>
 
     <section class="section">
       <h2>Education</h2>
-      <p><strong>Software Engineering (UFG) – Interrupted</strong></p>
-      <p>Complementary: Modern Web with JavaScript (Udemy), PL/SQL (Rational Technology)</p>
+      <p>
+        <strong
+          >Software Engineering (UFG) – Interrupted</strong
+        >
+      </p>
+      <p>
+        Complementary: Modern Web with JavaScript (Udemy),
+        PL/SQL (Rational Technology)
+      </p>
     </section>
 
     <section class="section">
@@ -82,24 +120,35 @@
       <ul>
         <li>
           <strong>Email:</strong>
-          <a href="mailto:emanuelbrunosj@gmail.com">emanuelbrunosj@gmail.com</a>
+          <a href="mailto:emanuelbrunosj@gmail.com"
+            >emanuelbrunosj@gmail.com</a
+          >
         </li>
 
         <li>
           <strong>Phone:</strong>
-          <a href="https://api.whatsapp.com/send?phone=5562991532200&text=Ola!" target="_blank">
+          <a
+            href="https://api.whatsapp.com/send?phone=5562991532200&text=Ola!"
+            target="_blank"
+          >
             +55 (62) 99153-2200
           </a>
         </li>
         <li>
           <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/bruno-jaime-898409135" target="_blank"
+          <a
+            href="https://www.linkedin.com/in/bruno-jaime-898409135"
+            target="_blank"
             >linkedin.com/in/bruno-jaime</a
           >
         </li>
         <li>
           <strong>GitHub:</strong>
-          <a href="https://github.com/brunoemanuelsj" target="_blank">github.com/brunoemanuelsj</a>
+          <a
+            href="https://github.com/brunoemanuelsj"
+            target="_blank"
+            >github.com/brunoemanuelsj</a
+          >
         </li>
       </ul>
     </section>
@@ -115,7 +164,9 @@ const today = new Date();
 const age = today.getFullYear() - birthDate.getFullYear();
 const monthDiff = today.getMonth() - birthDate.getMonth();
 const isBeforeBirthday =
-  monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate());
+  monthDiff < 0 ||
+  (monthDiff === 0 &&
+    today.getDate() < birthDate.getDate());
 
 const currentAge = isBeforeBirthday ? age - 1 : age;
 </script>

@@ -153,7 +153,6 @@ const renderChart = () => {
     }
   };
 
-  // Usando fetch para carregar o arquivo JSON
   fetch(
     'https://code.highcharts.com/mapdata/custom/world.topo.json'
   )
