@@ -11,3 +11,4 @@ This is an interactive portfolio built with **Vue 3** and **TypeScript**, showca
 - [Vite](https://vitejs.dev/)
 - [Vue Router](https://router.vuejs.org/)
 - [Pinia](https://pinia.vuejs.org/)
+- [Highcharts](https://www.highcharts.com/)
