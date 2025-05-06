@@ -46,7 +46,7 @@
         @click="closeMenu"
       >
         <TableIcon class="icon_nav" />
-        <div>Table</div>
+        <div>Data Management</div>
       </RouterLink>
     </div>
   </nav>

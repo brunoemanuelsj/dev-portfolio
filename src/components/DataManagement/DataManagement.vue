@@ -148,31 +148,34 @@ const deleteItem = (id: number) => {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background: white;
 }
 
 .title {
   text-align: center;
-  color: #2c3e50;
+  color: var(--russian-violet);
   margin-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 }
 
 .form-container {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--pewter);
+  padding: 2rem;
+  border-radius: 16px;
   margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(200px, 1fr)
+    minmax(240px, 1fr)
   );
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group {
@@ -181,43 +184,66 @@ const deleteItem = (id: number) => {
   gap: 0.5rem;
 }
 
+.form-group label {
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 .form-input,
 .form-select {
-  padding: 0.8rem;
-  border: 2px solid #e0e0e0;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--blue-gray);
   border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  background: white;
+  color: var(--dark-blue);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
 }
 
 .form-input:focus,
 .form-select:focus {
-  border-color: #42b883;
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 3px rgba(250, 208, 44, 0.15);
   outline: none;
 }
 
 .add-button {
   width: 100%;
   padding: 1rem;
-  background: #42b883;
-  color: white;
+  background: var(--yellow);
+  color: var(--dark-blue);
   border: none;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition:
-    transform 0.2s,
-    background 0.3s;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .add-button:hover {
-  background: #358f6a;
+  background: #f5c400;
   transform: translateY(-1px);
 }
 
 .add-button:disabled {
-  background: #cccccc;
+  background: var(--pewter);
+  color: var(--blue-gray);
   cursor: not-allowed;
-  transform: none;
+}
+
+@media (max-width: 768px) {
+  .data-management {
+    padding: 1.5rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 </style>

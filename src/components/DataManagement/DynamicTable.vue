@@ -112,82 +112,89 @@ const statusClass = (status: string) => {
 </script>
 
 <style scoped>
+.data-table {
+  margin-top: 2rem;
+}
+
 .styled-table {
   width: 100%;
   border-collapse: collapse;
+  background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.styled-table th,
-.styled-table td {
-  padding: 1rem;
+.styled-table th {
+  background: var(--pewter);
+  color: var(--dark-blue);
+  font-weight: 500;
+  padding: 1rem 1.5rem;
   text-align: left;
+  border-bottom: 2px solid var(--blue-gray);
+  font-size: 0.9rem;
 }
 
-.styled-table thead tr {
-  background-color: var(--blue-nav);
-  color: white;
+.styled-table td {
+  padding: 1rem 1.5rem;
+  color: var(--dark-blue);
+  border-bottom: 1px solid var(--pewter);
+  font-size: 0.9rem;
 }
 
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-  transition: background-color 0.2s;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f8f9fa;
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #42b883;
+.styled-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .styled-table tbody tr:hover {
-  background-color: #f1f1f1;
+  background: rgba(144, 173, 198, 0.03);
 }
 
 .status-badge {
   display: inline-block;
-  padding: 0.4rem 0.8rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid;
+  background: white;
 }
 
 .in-stock {
-  background-color: #c8e6c9;
-  color: #2e7d32;
+  color: var(--dark-blue);
+  border-color: var(--yellow);
+  background: rgba(250, 208, 44, 0.1);
 }
 
 .low-stock {
-  background-color: #fff3e0;
-  color: #ef6c00;
+  color: var(--russian-violet);
+  border-color: var(--blue-gray);
+  background: rgba(144, 173, 198, 0.1);
 }
 
 .out-of-stock {
-  background-color: #ffcdd2;
-  color: #c62828;
+  color: var(--russian-violet);
+  border-color: var(--russian-violet);
+  background: rgba(52, 17, 63, 0.05);
 }
 
 .delete-btn {
-  padding: 0.5rem 1rem;
-  background: #ff6b6b;
-  color: white;
-  border: none;
+  background: none;
+  color: var(--russian-violet);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--pewter);
   border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
 }
 
 .delete-btn:hover {
-  background: #ff5252;
+  background: rgba(52, 17, 63, 0.03);
+  border-color: var(--russian-violet);
 }
 
-.low-stock {
-  color: #ef6c00;
-  font-weight: 600;
+.mobile-view {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -196,15 +203,16 @@ const statusClass = (status: string) => {
   }
 
   .mobile-view {
-    display: block;
+    display: grid;
+    gap: 1rem;
   }
 
   .mobile-card {
     background: white;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--pewter);
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   }
 
   .card-row {
@@ -212,7 +220,7 @@ const statusClass = (status: string) => {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--pewter);
   }
 
   .card-row:last-child {
@@ -220,48 +228,36 @@ const statusClass = (status: string) => {
   }
 
   .card-label {
-    font-weight: 600;
-    color: #666;
-    font-size: 0.9rem;
+    color: #234664;
+    font-size: 0.8rem;
+    font-weight: 500;
   }
 
   .card-value {
+    color: var(--dark-blue);
+    font-weight: 500;
     text-align: right;
-    color: #333;
   }
 
-  .status-badge {
-    display: inline-block;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.8rem;
+  .card-actions {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
   }
 
-  .delete-btn {
+  .low-stock {
+    color: var(--russian-violet);
+    font-weight: 600;
+  }
+
+  .mobile-card .delete-btn {
     width: 100%;
     padding: 0.6rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 
-@media (min-width: 769px) {
-  .mobile-view {
-    display: none;
-  }
-}
-
-.low-stock {
-  color: #ef6c00 !important;
-}
-
-.status-badge {
-  white-space: nowrap;
-}
-
-.delete-btn {
-  transition: transform 0.2s;
-}
-
-.delete-btn:active {
-  transform: scale(0.95);
+.low-stock-indicator {
+  color: var(--russian-violet);
+  font-weight: 600;
 }
 </style>
