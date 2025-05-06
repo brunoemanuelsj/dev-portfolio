@@ -62,15 +62,12 @@ const columns = ref<Column[]>([
           'Leg extension 4x',
           'Barbell back squat 4x',
           'Leg press 4x',
+          'Hip thrust 4x',
         ],
       },
+
       {
         id: 2,
-        title: 'Glutes',
-        exercises: ['Hip thrust 4x'],
-      },
-      {
-        id: 3,
         title: 'Calves',
         exercises: [
           'Standing calf raise 4x',
@@ -84,7 +81,7 @@ const columns = ref<Column[]>([
     title: 'Tuesday',
     cards: [
       {
-        id: 4,
+        id: 3,
         title: 'Chest',
         exercises: [
           'Incline bench press (30°) 4x',
@@ -94,7 +91,7 @@ const columns = ref<Column[]>([
         ],
       },
       {
-        id: 5,
+        id: 4,
         title: 'Triceps',
         exercises: [
           'Triceps pushdown (bar) 4x',
@@ -103,7 +100,7 @@ const columns = ref<Column[]>([
         ],
       },
       {
-        id: 6,
+        id: 5,
         title: 'Forearms',
         exercises: ['Cable wrist curl 4x'],
       },
@@ -114,7 +111,7 @@ const columns = ref<Column[]>([
     title: 'Wednesday',
     cards: [
       {
-        id: 7,
+        id: 6,
         title: 'Core',
         exercises: ['Plank 4x'],
       },
@@ -125,21 +122,18 @@ const columns = ref<Column[]>([
     title: 'Thursday',
     cards: [
       {
-        id: 8,
+        id: 7,
         title: 'Hamstrings',
         exercises: [
           'Seated leg curl 4x',
           'Lying leg curl 4x',
           'Standing leg curl 4x',
+          'Hip abductor machine 4x',
         ],
       },
+
       {
-        id: 9,
-        title: 'Glutes',
-        exercises: ['Hip abductor machine 4x'],
-      },
-      {
-        id: 10,
+        id: 8,
         title: 'Shoulders',
         exercises: [
           'Front dumbbell raise 3x',
@@ -154,7 +148,7 @@ const columns = ref<Column[]>([
     title: 'Friday',
     cards: [
       {
-        id: 11,
+        id: 9,
         title: 'Back',
         exercises: [
           'Assisted pull-up (warm-up) 4x',
@@ -164,7 +158,7 @@ const columns = ref<Column[]>([
         ],
       },
       {
-        id: 12,
+        id: 10,
         title: 'Biceps',
         exercises: [
           'Dumbbell bicep curl 4x',
@@ -173,7 +167,7 @@ const columns = ref<Column[]>([
         ],
       },
       {
-        id: 13,
+        id: 11,
         title: 'Forearms',
         exercises: ['Reverse cable wrist curl 4x'],
       },

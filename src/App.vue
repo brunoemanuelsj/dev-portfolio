@@ -36,7 +36,6 @@ import { RouterView } from 'vue-router';
   overflow-y: auto;
   overflow-x: hidden;
 
-  padding: 1rem;
   margin-top: var(--nav-mobile);
   transition: margin 0.3s ease;
 

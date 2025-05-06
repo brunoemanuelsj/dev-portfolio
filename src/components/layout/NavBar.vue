@@ -2,23 +2,51 @@
   <nav class="app_nav">
     <div class="mobile_nav">
       <div class="title">{{ route.meta.title }}</div>
-      <BurgerIcon class="button_toggle" @click="toggleMenu" :isOpen="isOpen" />
+      <BurgerIcon
+        class="button_toggle"
+        @click="toggleMenu"
+        :isOpen="isOpen"
+      />
     </div>
 
-    <div class="app_nav_inner" :class="{ mobile_open: isOpen }">
-      <RouterLink to="/" class="app_nav_link" @click="closeMenu">
+    <div
+      class="app_nav_inner"
+      :class="{ mobile_open: isOpen }"
+    >
+      <RouterLink
+        to="/"
+        class="app_nav_link"
+        @click="closeMenu"
+      >
         <BadgeIcon class="icon_nav" />
         <div>About Me</div>
       </RouterLink>
 
-      <RouterLink to="/dashboard" class="app_nav_link" @click="closeMenu">
+      <RouterLink
+        to="/dashboard"
+        class="app_nav_link"
+        @click="closeMenu"
+      >
         <DashboardIcon class="icon_nav" />
         <div>Dashboard</div>
       </RouterLink>
 
-      <RouterLink to="/kanban" class="app_nav_link" @click="closeMenu">
+      <RouterLink
+        to="/kanban"
+        class="app_nav_link"
+        @click="closeMenu"
+      >
         <KanbanIcon class="icon_nav" />
         <div>Kanban</div>
+      </RouterLink>
+
+      <RouterLink
+        to="/data-management"
+        class="app_nav_link"
+        @click="closeMenu"
+      >
+        <TableIcon class="icon_nav" />
+        <div>Table</div>
       </RouterLink>
     </div>
   </nav>
@@ -28,6 +56,8 @@
 import BadgeIcon from '@/icons/BadgeIcon.vue';
 import DashboardIcon from '@/icons/DashboardIcon.vue';
 import KanbanIcon from '@/icons/KanbanIcon.vue';
+import TableIcon from '@/icons/TableIcon.vue';
+
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 

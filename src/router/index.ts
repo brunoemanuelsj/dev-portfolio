@@ -30,11 +30,12 @@ const router = createRouter({
     },
     {
       meta: {
-        title: 'Dynamic Table',
+        title: 'Data Management',
       },
-      path: '/dynamic-table-crud',
-      name: 'dynamic-table-crud',
-      component: () => import('../views/DynamicTableCrudView.vue'),
+      path: '/data-management',
+      name: 'data-management',
+      component: () =>
+        import('../views/DataManagementView.vue'),
     },
     {
       meta: {
